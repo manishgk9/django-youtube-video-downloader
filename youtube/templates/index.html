@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viderworld.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="icon" href=
+"https://uxwing.com/wp-content/themes/uxwing/download/education-school/v-alphabet-round-circle-icon.png"
+          type="image/x-icon">
+    <style>
+        #navfont {
+        font-family: 'Tangerine', serif;
+        font-size: 45px;
+        color: white;
+        
+      }
+      body {
+        font-family: 'Roboto',Thin 100;
+        font-size: 15px;
+      }
+      #search{
+        width: 10px;
+      }
+      .padding{
+        color: gray;
+        font-family: Roboto,Thin 100;
+        font-size: .8rem;
+      }
+
+      .ask{
+        font-family: 'Roboto',Thin 100;
+        font-size: 1.9rem;
+        
+      }
+      .ph{
+        font-family: 'Roboto',Thin 100;
+        font-size: 1.2rem;
+        color: rgb(114, 105, 105);
+      }
+  </style>
+    
+</head>
+<body>
+
+    <!-- navbar -->
+
+    <div class="container-fluid pb-5" style="background-color: #335c79;">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#335c79;">
+            <div class="container">
+              <a id="navfont" class="navbar-brand" href="#">Viderworld.com</a>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                      <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+                      <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+                    </svg></a>
+                  </li>
+                </ul>
+            </div>
+          </nav>
+
+          <h1 class="text-center" style="font-family: 'Roboto', Thin 100;
+          font-size: 25px;
+          margin-top: 5rem;
+          color: white;">
+            YouTube Video Downloader
+          </h1>
+          <div class="container-fluid mt-4">
+            <div class="row justify-content-center">
+              <div class="col-md-6 text-center">
+                <form class="form-inline d-flex flex-column align-items-center" method="post" action="{% url "video_detail" %}">
+                  {% csrf_token %} 
+                  <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Paste video link here" name='video_url' id="searchf" style="height: 3rem;">
+                  </div>
+                  <div class="mb-2">
+                   <button style="width: 8rem;
+                      height: 2.5rem" class="btn btn-success btn-sm" type="submit" id="searchb">Download</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+       </div> 
+       {% block content %}{% endblock content %}
+       
+
+
+    <div class="container-fluid p-5 justify-content-center">
+      <p class="padding">
+        ViderWorld offers a user-friendly and efficient YouTube video downloader that allows you to seamlessly download your favorite videos for offline viewing. Our platform prioritizes ease of use and quick access, ensuring a hassle-free experience for users looking to save and enjoy YouTube content anytime, anywhere. With ViderWorld, you can effortlessly download videos in various formats, maintaining high quality throughout. Unlock the convenience of offline playback with our reliable YouTube video downloader, making ViderWorld your go-to destination for effortless and reliable video downloads  </p>
+      <p class="text-center" style="font-size: 20px;">
+        Supported Platforms:
+      </p>
+      <div class="row justify-content-center">
+        <div class="col col-sm-2 p-4 text-center">
+            <img src="https://ssyoutube.com/img/platforms/windows.svg" alt="" width="100" height="100">
+        </div>
+        <div class="col col-sm-2 p-4 text-center">
+            <img src="https://ssyoutube.com/img/platforms/apple.svg" alt="" width="100" height="100">
+        </div>
+        <div class="col col-sm-2 p-4 text-center">
+            <img src="https://ssyoutube.com/img/platforms/android.svg" alt="" width="100" height="100">
+        </div>
+        <div class="col col-sm-2 p-4 text-center">
+            <img src="https://ssyoutube.com/img/platforms/linux.svg" alt="" width="100" height="100">
+        </div>
+    </div>
+    <p class="padding">
+      Welcome to ViderWorld Your Ultimate Destination for Effortless YouTube Video Downloads! At ViderWorld, we take pride in offering a seamless and user-friendly experience for downloading your favorite YouTube videos. Our platform is designed to provide a hassle-free solution, ensuring you can enjoy your preferred content offline, anytime, anywhere. With a focus on quality and convenience, ViderWorld stands out as a premier YouTube video downloader service. Explore our intuitive interface, discover a wide range of supported formats, and make the most of our efficient downloading capabilities. Join the ViderWorld community and unlock the convenience of offline video enjoyment with just a few clicks. Experience the next level of video downloading with ViderWorld – where excellence meets simplicity!
+    </p>
+    <p class="ask text-center">
+      Ultimate Guide on Downloading YouTube Videos Online Easily
+    </p>
+
+   <div class="container">
+    <p class="ask text-center">
+      Frequently Asked Questions
+    </p>
+
+   <div class="container mb-2 pb-2" style="background-color:#335c79;">
+    <p class="ph text-light">
+      1.Why We Use Viderworld:
+     </p>
+     <p class="padding text-light">ViderWorld simplifies YouTube video downloads with quality, privacy, and cross-platform accessibility your go-to for effortless, secure, and legal video content.</p>
+  
+   </div>
+   <div class="container mb-2 pb-2" style="background-color:#335c79;">
+    <p class="ph text-light">2.What is Benifits Of Using Viderworld</p>
+    <p class="padding text-light">Benefits of Using ViderWorld: Effortless YouTube downloads, diverse format options, secure and legal, quality preservation, user-friendly interface, and cross-platform compatibility.</p>
+
+   </div>
+   <div class="container mb-2 pb-2" style="background-color:#335c79;">
+    <p class="ph text-light">3.Privacy And Security In Vigerworld</p>
+    <p class="padding text-light">Rest assured, ViderWorld values your privacy. We uphold a strict no-information storage policy, providing a secure and anonymous YouTube video downloading environment for users.And we can not store any kind of user information</p>
+  
+   </div>
+   </div>  <!-- img part -->
+    <p class="text-center" style="font-size: 0.89rem;">Legal Note:</p>
+    <p class="padding" >
+    Please be aware that while it is generally permissible to download videos for personal entertainment purposes, it is crucial to uphold copyright and intellectual property rights. Please make sure that any video downloads are solely for your own viewing and refrain from any unauthorized sharing or distribution.
+    </p>
+    <p class="text-center" style="font-size: 0.89rem;">Disclaimer:</p>
+    <p class="padding">
+      viderworld.com operates independently and is not affiliated with any specific social media or video platform. The primary objective of this service is to assist individuals in downloading personal videos. Users are solely accountable for adhering to the terms of service and copyright regulations of the platforms they utilize for downloading.
+
+    </p>
+      </div>
+      
+<div class="container-fluid"style="background-color:#335c79;">
+    <footer class="text-center" style="background-color:#335c79;">
+      <!-- Grid container -->
+      <div class="container-fluid pt-4" >
+        <!-- Section: Social media -->
+        <section class="mb-4">
+                    <!-- x -->
+          <a target="_blank" class="text-light p-2" style="text-decoration:none" href="https://twitter.com/manishGk9">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </a>
+          <!-- Linkedin -->
+          <a target="_blank" class="text-light p-2" style="text-decoration:none" href="https://www.linkedin.com/in/manish-yadav-717278222/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+            </svg>
+          </a>
+          <!-- Github -->
+          <a target="_blank" class="text-light p-2" href="https://github.com/manishgk9">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+            </svg>
+          </a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+  
+      <div class="text-center p-3 container-fluid text-light" >
+        © 2024 YouTube Video Downloader:
+        <a style="text-decoration:none;color: white;"href="https://viderworld.com/">Viderworld.com All Rights Reserved</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </div>
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

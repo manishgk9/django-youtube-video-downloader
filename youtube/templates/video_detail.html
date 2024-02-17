@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+  <div class="container my-5 sm" id="videopart" style="height: 50%;width: 60%;">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <img src="{{video_data.thumb_nail}} " alt="Video thumbnail" class="img-fluid mb-3">
+            <h2 class="mb-3">{{video_data.title}}</h2>
+            <p class="mb-2">Duration:{{video_data.duration}}</p>
+        </div>
+        <div class="col">
+          <p style="text-align: center;font-size: 22px;">Download Videos As</p>
+            <table class="table table-info">
+              <tbody>
+                <tr>
+                  <th scope="row">{{video_data.resolution}}-{{video_data.filetype}}</th>
+                  <td> <a href="{{video_data.url}}" target="_blank" style="text-decoration: none;"><button class="btn btn-success btn-sm" >Download</button></a></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
